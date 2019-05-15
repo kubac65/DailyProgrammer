@@ -27,6 +27,14 @@ fit3_test_data = [
     (1234567, 89101112, 13141516, 171819, 202122, 232425, 174648)
 ]
 
+fitn_test_data = [
+    ([3, 4], [1, 2], 6),
+    ([123, 456, 789], [10, 11, 12], 32604),
+    ([123, 456, 789, 1011, 1213, 1415], [16, 17, 18, 19, 20, 21], 1883443968),
+    # ultimate test, so far crashing with my O(N!) implementation
+    #([180598, 125683, 146932, 158296, 171997, 204683, 193694, 216231, 177673, 169317, 216456, 220003, 165939, 205613, 152779, 177216, 128838, 126894, 210076, 148407], [1984, 2122, 1760, 2059, 1278, 2017, 1443, 2223, 2169, 1502, 1274, 1740, 1740, 1768, 1295, 1916, 2249, 2036, 1886, 2010], 4281855455197643306306491981973422080000
+]
+
 class FitLibTests(unittest.TestCase):
     def test_fit1(self):
         self.excercise_function(fitlib.fit1, fit1_test_data)
@@ -38,13 +46,19 @@ class FitLibTests(unittest.TestCase):
         for cx, cy, cz, bx, by, bz, expected_result in fit3_test_data:
             with self.subTest():
                 actual_result = fitlib.fit3(cx, cy, cz, bx, by, bz)
-                self.assertEqual(expected_result, actual_result, "Actual result does not match expected result")
+                self.assertEqual(actual_result, expected_result, "Actual result does not match expected result")
+
+    def test_fitn(self):
+        for c, b, expected_result in fitn_test_data:
+            with self.subTest():
+                actual_result = fitlib.fitn(c, b)
+                self.assertEqual(actual_result, expected_result, "Actual result does not match expected result")
 
     def excercise_function(self, function, data_set):
         for cx, cy, bx, by, expected_result in data_set:
             with self.subTest():
                 actual_result = function(cx, cy, bx, by)
-                self.assertEqual(expected_result, actual_result, "Actual result does not match expected result")
+                self.assertEqual(actual_result, expected_result, "Actual result does not match expected result")
 
 if __name__ == '__main__':
     unittest.main()
