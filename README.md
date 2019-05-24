@@ -10,12 +10,16 @@ Each challenge is approached individually, so different programing languages and
 
 ### Challenge 377
 
+> [Link to the problem](https://www.reddit.com/r/dailyprogrammer/comments/bazy5j/20190408_challenge_377_easy_axisaligned_crate/)
+
 Execute tests with following command:
 ```bash
 python -m challenge377.fitlib_tests
 ```
 
 ### Challenge 378
+
+> [Link to the problem](https://www.reddit.com/r/dailyprogrammer/comments/bqy1cf/20190520_challenge_378_easy_the_havelhakimi/)
 
 Execute tests with following command:
 ```bash
