@@ -23,5 +23,14 @@ python -m challenge377.fitlib_tests
 
 Execute tests with following command:
 ```bash
-python -m challenge377.tests
+python -m challenge378.tests
+```
+
+### Challenge 379
+
+> [Link to the problem](https://www.reddit.com/r/dailyprogrammer/comments/cdieag/20190715_challenge_379_easy_progressive_taxation/)
+
+Execute tests with following command:
+```bash
+python -m challenge379.tests
 ```
